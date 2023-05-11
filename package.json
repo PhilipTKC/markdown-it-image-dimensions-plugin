@@ -18,5 +18,5 @@
     "build": "npm run clean && tsc && npm run minify:js",
     "minify:js": "terser dist/index.js -o dist/index.min.js"
   },
-  "main": "dist/index.min.js"
+  "main": "src/index.ts"
 }

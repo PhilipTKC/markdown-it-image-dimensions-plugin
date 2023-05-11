@@ -2,7 +2,7 @@ import MarkdownIt, { PluginWithOptions } from "markdown-it";
 import Renderer from "markdown-it/lib/renderer";
 import Token from "markdown-it/lib/token";
 
-interface ImagePluginOptions {
+export interface ImagePluginOptions {
     container: string;
     image: string;
     loading: 'lazy' | 'eager' | 'auto';
@@ -18,7 +18,7 @@ const pluginDefaults: ImagePluginOptions = {
     removeSource: false,
 }
 
-const imageDimensionsPlugin: PluginWithOptions<ImagePluginOptions> = (md: MarkdownIt, pluginOpts: ImagePluginOptions = pluginDefaults) => {
+export const imageDimensionsPlugin: PluginWithOptions<ImagePluginOptions> = (md: MarkdownIt, pluginOpts: ImagePluginOptions = pluginDefaults) => {
     /*
     * Add class to paragraph_open token if the next token is an image
     * Only add the class if the container option is set
@@ -91,5 +91,3 @@ const imageDimensionsPlugin: PluginWithOptions<ImagePluginOptions> = (md: Markdo
         return self.renderToken(tokens, idx, options);
     };
 };
-
-export { imageDimensionsPlugin, ImagePluginOptions };
