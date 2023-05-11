@@ -1,5 +1,5 @@
 import { PluginWithOptions } from "markdown-it";
-export interface ImagePluginOptions {
+interface ImagePluginOptions {
     container: string;
     image: string;
     loading: 'lazy' | 'eager' | 'auto';
@@ -7,4 +7,4 @@ export interface ImagePluginOptions {
     removeSource: boolean;
 }
 declare const imageDimensionsPlugin: PluginWithOptions<ImagePluginOptions>;
-export default imageDimensionsPlugin;
+export { imageDimensionsPlugin, ImagePluginOptions };

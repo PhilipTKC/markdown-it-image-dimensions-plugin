@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.imageDimensionsPlugin = void 0;
 const pluginDefaults = {
     container: '',
     image: '',
@@ -46,7 +47,7 @@ const imageDimensionsPlugin = (md, pluginOpts = pluginDefaults) => {
         const widthIsPercentage = width.includes('%');
         const heightIsPercentage = height.includes('%');
         // Remove width and height from src
-        const replacedSrc = src.replace(/[?&](width|height)=\d+%?/g, '');
+        const replacedSrc = src.replace(/[\?&](width|height)=\S+&?/g, '');
         const attributes = [
             ['src', pluginOpts.removeSource ? '' : replacedSrc],
             ['loading', pluginOpts.loading],
@@ -69,4 +70,4 @@ const imageDimensionsPlugin = (md, pluginOpts = pluginDefaults) => {
         return self.renderToken(tokens, idx, options);
     };
 };
-exports.default = imageDimensionsPlugin;
+exports.imageDimensionsPlugin = imageDimensionsPlugin;

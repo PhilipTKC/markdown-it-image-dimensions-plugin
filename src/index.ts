@@ -2,7 +2,7 @@ import MarkdownIt, { PluginWithOptions } from "markdown-it";
 import Renderer from "markdown-it/lib/renderer";
 import Token from "markdown-it/lib/token";
 
-export interface ImagePluginOptions {
+interface ImagePluginOptions {
     container: string;
     image: string;
     loading: 'lazy' | 'eager' | 'auto';
@@ -64,7 +64,7 @@ const imageDimensionsPlugin: PluginWithOptions<ImagePluginOptions> = (md: Markdo
         const heightIsPercentage = height.includes('%');
 
         // Remove width and height from src
-        const replacedSrc = src.replace(/[?&](width|height)=\d+%?/g, '');
+        const replacedSrc = src.replace(/[\?&](width|height)=\S+&?/g, '');
 
         const attributes = [
             ['src', pluginOpts.removeSource ? '' : replacedSrc],
@@ -92,4 +92,4 @@ const imageDimensionsPlugin: PluginWithOptions<ImagePluginOptions> = (md: Markdo
     };
 };
 
-export default imageDimensionsPlugin;
+export { imageDimensionsPlugin, ImagePluginOptions };
