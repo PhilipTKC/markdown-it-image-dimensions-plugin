@@ -27,7 +27,7 @@ This plugin provides additional functionality to Markdown by allowing you to spe
 ## Plugin
 
 ```ts
-import imageDimensionsPlugin, { ImagePluginOptions } from '';
+import { imageDimensionsPlugin, ImagePluginOptions } from '';
 
 const imageDimensionsPluginOptions: ImagePluginOptions = {
     container: "image-container",
