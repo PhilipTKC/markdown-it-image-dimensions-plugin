@@ -1,6 +1,6 @@
 # Markdown It Image Dimensions Plugin
 
-This plugin provides additional functionality to Markdown by allowing you to specify the height and width of images using the following syntax. Additionally, it allows users to set the loading and decode attributes on images and add classes to the container and image element.
+This plugin provides additional functionality to Markdown by allowing you to specify the height and width of images using the following syntax. Additionally, it allows you to set the loading and decode attributes on images and add classes to the container and image element.
 
 ## Markdown Input
 
@@ -24,8 +24,6 @@ This plugin provides additional functionality to Markdown by allowing you to spe
 ![alt text](image.png "SomeTitle")
 ```
 
-```md
-
 ## Plugin
 
 ```ts
@@ -40,7 +38,6 @@ const imageDimensionsPluginOptions: ImagePluginOptions = {
 }
 
 md.use<ImagePluginOptions>(imageDimensionsPlugin, imageDimensionsPluginOptions)
-
 ```
 
 Note that removeSource should only be used if you have a way to set src from data-src in your application. Eg. using IntersectionObserver.
