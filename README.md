@@ -1,6 +1,13 @@
 # Markdown It Image Dimensions Plugin
 
+## Plugin no longer required.
+
+## Description
+
 This plugin provides additional functionality to Markdown by allowing you to specify the height and width of images using the following syntax. Additionally, it allows you to set the loading and decode attributes on images and add classes to the container and image element.
+
+Plugin created for [Quick Start](https://github.com/PhilipTKC/quick-start)
+
 
 ## Markdown Input
 
